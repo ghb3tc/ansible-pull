@@ -1,0 +1,36 @@
+---
+
+- hosts: all
+  become: true
+  tasks:
+
+  - name: install updates all servers
+    tags: always
+    apt:
+      upgrade: dist
+      update_cache: yes
+    when: ansible_distribution == "Ubuntu"
+
+- hosts: media_servers
+  become: true
+  tasks:
+
+  - name: install media servers (piplex, b3teg1)
+    tags: dlna
+    apt:
+      name:
+        - minidlna
+      state: latest
+    when: ansible_distribution == "Ubuntu"
+
+- hosts: pi
+  become: true
+  tasks:
+
+  - name: updating Pi packages
+    tags: pi
+    apt:
+      name:
+        - mc
+      state: latest
+    when: ansible_distribution == "Ubuntu"

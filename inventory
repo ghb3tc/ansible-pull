@@ -1,9 +1,16 @@
 # List of servers
-
+[home_servers]
 b3teg1
 b3teg2
 b3teg3
 b3thp
-piplex
-b3tdel-ts
+[media_servers]
+#piplex
+#b3tpi
+b3teg1
+[laptop]
+#b3tdel-ts
+[pi]
 b3tpi
+piplex
+
